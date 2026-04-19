@@ -6,7 +6,7 @@ import Pagination from '@/components/Pagination/Pagination'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
-import { fetchNotes } from '@/lib/clientApi'
+import { fetchNotes } from '@/lib/api/clientApi'
 import {useRouter} from 'next/navigation'
 export default function NotesClient({ tag }: { tag?: string }) {
   const [search, setSearch] = useState('')

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/lib/store/authStore'
 import { ApiError } from '@/app/api/api'
-import { RegisterRequest, register } from "@/lib/clientApi";
+import { RegisterRequest, register } from "@/lib/api/clientApi";
 
 
 
