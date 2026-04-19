@@ -1,4 +1,4 @@
-import { fetchServerNoteById } from '@/lib/serverApi'
+import { fetchServerNoteById } from '@/lib/api/serverApi'
 import NoteDetailsClient from "./NoteDetails.client";
 import { Metadata } from "next";
 import {
