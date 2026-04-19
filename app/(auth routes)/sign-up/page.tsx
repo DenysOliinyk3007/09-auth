@@ -4,7 +4,6 @@ import SignUpPage from "@/components/SignUpPage/SignUpPage";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/lib/store/authStore'
-import { ApiError } from '@/app/api/api'
 import { RegisterRequest, register } from "@/lib/api/clientApi";
 
 
@@ -28,11 +27,7 @@ const SignUp = () => {
                 setError('Invalid email or password');
             }
         } catch (error) {
-            setError(
-                (error as ApiError).response?.data?.error ??
-                (error as ApiError).message ??
-                'Oops... some error'
-            )
+            console.log(error);
         }
     }
     return (

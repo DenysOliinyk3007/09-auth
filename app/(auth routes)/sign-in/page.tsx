@@ -4,7 +4,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { login, LoginRequest } from "@/lib/api/clientApi";
-import { ApiError } from '@/app/api/api'
 import SignInPage from "@/components/SignInPage/SignInPage"
 import { useAuthStore } from '@/lib/store/authStore' 
 
@@ -23,11 +22,7 @@ const SignIn = () => {
         setError('Invalid email or password')
       }
     } catch (error) {
-      setError(
-        (error as ApiError).response?.data?.error ??
-        (error as ApiError).message ??
-        'Some error'
-      )
+      console.log(error);
     }
   };
 

@@ -1,13 +1,13 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
-import { useAuthStore } from '@/lib/store/authStore'
+import type { User } from '@/types/user'
 import css from './ProfilePage.module.css'
 
-export default function ProfilePage() {
-  const user = useAuthStore((state) => state.user)
+type Props = {
+  user: User
+}
 
+export default function ProfilePage({ user }: Props) {
   return (
     <main className={css.mainContent}>
       <div className={css.profileCard}>
@@ -19,20 +19,18 @@ export default function ProfilePage() {
         </div>
 
         <div className={css.avatarWrapper}>
-          {user?.avatar && (
-            <Image
-              src={user.avatar}
-              alt="User Avatar"
-              width={120}
-              height={120}
-              className={css.avatar}
-            />
-          )}
+          <Image
+            src={user.avatar}
+            alt="User Avatar"
+            width={120}
+            height={120}
+            className={css.avatar}
+          />
         </div>
 
         <div className={css.profileInfo}>
-          <p>Username: {user?.username}</p>
-          <p>Email: {user?.email}</p>
+          <p>Username: {user.username}</p>
+          <p>Email: {user.email}</p>
         </div>
       </div>
     </main>

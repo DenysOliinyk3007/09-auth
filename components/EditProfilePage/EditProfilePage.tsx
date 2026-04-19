@@ -18,10 +18,10 @@ export default function EditProfilePage() {
     e.preventDefault()
     try {
       const updated = await updateMe({ username })
-      setUser(updated)  
+      setUser(updated)
       router.push('/profile')
-    } catch (err) {
-      console.error(err)
+    } catch (error) {
+      console.error(error)
     }
   }
 

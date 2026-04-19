@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { getServerMe } from '@/lib/api/serverApi'
 import ProfilePage from '@/components/ProfilePage/ProfilePage'
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Page() {
-  return <ProfilePage />
+export default async function Page() {
+  const user = await getServerMe()
+  return <ProfilePage user={user} />
 }

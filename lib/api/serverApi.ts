@@ -24,7 +24,7 @@ export const getServerMe = async (): Promise<User> => {
   return data
 }
 
-export const fetchServerNotes = async (
+export const fetchNotes = async (
   search: string,
   page: number,
   tag?: string
